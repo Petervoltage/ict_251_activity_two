@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Mumba - Web Technologies Student Portfolio</title>
+    <!-- Linked Stylesheet via Relative Path (Part A.3) -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Header Section (Part B.1) -->
+    <header>
+        <h1>Peter Mumba's Student Portfolio</h1>
+        <p>Computer Science Student | Mulungushi University</p>
+    </header>
+
+    <!-- Navigation Bar (Part B.3) -->
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#hobbies">My Hobbies</a>
+        <a href="#learning-plan">Learning Plan</a>
+        <a href="#photos">My Photos</a>
+        <a href="#media">My Media</a>
+        <a href="#contact">Contact</a>
+        <a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>
+    </nav>
+
+    <!-- Main Content Container (Part B.1) -->
+    <main>
+
+        <!-- Section 1: About Me (Part B.1 & B.2) -->
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>
+                My name is Peter Mumba, a passionate Computer Science student at Mulungushi University. 
+                I am deeply interested in software development, web applications, and digital innovation. 
+                Through the ICT251 Web Technologies course, I aim to master modern web standards, semantic HTML5 structure, 
+                responsive CSS layout design, and client-side interactivity to build professional, accessible software solutions.
+            </p>
+            <p><strong>Student ID:</strong> 202508483</p>
+        </section>
+
+        <!-- Section 2: My Hobbies (Part B.2) -->
+        <section id="hobbies" class="content-section">
+            <h2>My Hobbies</h2>
+            <ul>
+                <li>Basketball</li>
+                <li>Music</li>
+                <li>Reading</li>
+            </ul>
+        </section>
+
+        <!-- Section 3: My Learning Plan (Part B.2 & B.5) -->
+        <section id="learning-plan" class="content-section">
+            <h2>My Learning Plan</h2>
+            <p>Here are the step-by-step actions I am taking to improve my web development skills:</p>
+            <ol>
+                <li>Practice semantic HTML layout design and accessibility guidelines daily.</li>
+                <li>Master responsive page layouts using modern CSS Flexbox and Grid.</li>
+                <li>Build interactive web applications using modern JavaScript and backend frameworks.</li>
+            </ol>
+
+            <h3>Weekly Study Schedule</h3>
+            <table>
+                <caption>ICT251 Weekly Web Development Roadmap</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Practice Task</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Monday</td>
+                        <td>HTML5 Semantics & Forms</td>
+                        <td>Build an accessible contact form with validation</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>CSS Box Model & Layouts</td>
+                        <td>Style gallery cards using Flexbox and borders</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Multimedia Integration</td>
+                        <td>Embed accessible video and audio elements with transcripts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Section 4: My Photos (Part B.4) -->
+        <section id="photos" class="content-section">
+            <h2>My Photos</h2>
+            <div class="gallery-grid">
+                <figure>
+                    <img src="images/ChatGPT Image Sep 26, 2026, 03_13_08 PM.png" alt="Peter Mumba's web development workspace">
+                    <figcaption>My web development workspace and study environment.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/Gemini_Generated_Image_mwkxm8mwkxm8mwkx.jpg" alt="Mulungushi University campus grounds">
+                    <figcaption>Mulungushi University campus where I study Computer Science.</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/ChatGPT Image Sep 28, 2026, 08_41_20 PM.png" alt="Participating in outdoor sports activities">
+                    <figcaption>Staying active playing basketball and outdoor sports.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Section 5: My Media (Part C.1 & C.2) -->
+        <section id="media" class="content-section">
+            <h2>My Media</h2>
+            
+            <article class="media-card">
+                <h3>Self-Introduction Video</h3>
+                <video controls width="300" height="200">
+                    <source src="videos/WhatsApp Video 2026-09-26 at 15.53.40.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p><strong>Description:</strong> A brief video introduction detailing my academic background and web development goals.</p>
+                <details>
+                    <summary><strong>View Written Transcript</strong></summary>
+                    <p>
+                        <em>"Hello everyone! My name is Peter Mumba, a Computer Science student at Mulungushi University. 
+                        In this course, ICT251 Web Technologies, I hope to master responsive web design, semantic HTML, and modern frontend frameworks."</em>
+                    </p>
+                </details>
+            </article>
+
+            <article class="media-card">
+                <h3>Audio Reflection</h3>
+                <audio controls>
+                    <!-- Audio saved in videos folder per Part A.2 requirement -->
+                    <source src="videos/WhatsApp Audio 2026-09-26 at 17.59.37.mp4" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p><strong>Description:</strong> A short recording discussing why I am studying web technologies and my passion for software engineering.</p>
+            </article>
+        </section>
+
+        <!-- Section 6: Contact Form (Part B.6) -->
+        <section id="contact" class="content-section">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out using the demonstration form below:</p>
+            
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full-name" required placeholder="e.g. Peter Mumba">
+                </div>
+
+                <div class="form-group">
+                    <label for="email-address">Email Address:</label>
+                    <input type="email" id="email-address" name="email-address" required placeholder="e.g. student@mulungushi.ac.zm">
+                </div>
+
+                <div class="form-group">
+                    <label for="topic">Inquiry Topic:</label>
+                    <select id="topic" name="topic">
+                        <option value="general">General Inquiry</option>
+                        <option value="collaboration">Project Collaboration</option>
+                        <option value="feedback">Website Feedback</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Send Message</button>
+                <p class="form-note"><small>Note: This form is a local browser demonstration and does not transmit data across a network.</small></p>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Page Footer (Part B.1) -->
+    <footer>
+        <p>&copy; 2026 Peter Mumba | ICT251 Web Technologies | Mulungushi University</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1442 @@
+
+/* ==========================================================================
+   ICT251 ACTIVITY 2
+   PREMIUM STUDENT PORTFOLIO STYLESHEET
+   --------------------------------------------------------------------------
+   Author: Peter Mumba
+   Course: ICT251 Web Technologies
+   Institution: Mulungushi University
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+
+  /* -------------------- Brand Colours -------------------- */
+
+  --primary: #08111f;
+  --primary-light: #132238;
+  --primary-soft: #1e293b;
+
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --blue-light: #dbeafe;
+
+  --cyan: #06b6d4;
+  --cyan-light: #cffafe;
+
+  --purple: #7c3aed;
+  --purple-light: #ede9fe;
+
+  /* -------------------- Backgrounds -------------------- */
+
+  --background: #f4f7fb;
+  --background-alt: #eef4fb;
+
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+
+  /* -------------------- Text -------------------- */
+
+  --text: #111827;
+  --text-soft: #475569;
+  --text-light: #64748b;
+
+  --white: #ffffff;
+
+  /* -------------------- Borders -------------------- */
+
+  --border: #e2e8f0;
+  --border-dark: #cbd5e1;
+
+  /* FIX:
+     This variable was referenced in the original stylesheet
+     but was not defined.
+  */
+
+  --accent-light: #eff6ff;
+
+  /* -------------------- Typography -------------------- */
+
+  --font-main:
+    "Inter",
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  --font-heading:
+    "Inter",
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  /* -------------------- Layout -------------------- */
+
+  --max-width: 1120px;
+
+  /* -------------------- Radius -------------------- */
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+
+  /* -------------------- Shadows -------------------- */
+
+  --shadow-sm:
+    0 2px 8px rgba(15, 23, 42, 0.06);
+
+  --shadow-md:
+    0 8px 25px rgba(15, 23, 42, 0.08);
+
+  --shadow-lg:
+    0 18px 45px rgba(15, 23, 42, 0.12);
+
+  --shadow-blue:
+    0 10px 30px rgba(37, 99, 235, 0.22);
+
+  /* -------------------- Animation -------------------- */
+
+  --transition:
+    all 0.25s ease;
+
+  --transition-slow:
+    all 0.4s ease;
+}
+
+
+/* ==========================================================================
+   2. GLOBAL RESET
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+html {
+  scroll-behavior: smooth;
+
+  /*
+     Prevents sticky navigation from covering
+     section headings when clicking navigation links.
+  */
+
+  scroll-padding-top: 90px;
+}
+
+
+body {
+  font-family: var(--font-main);
+
+  line-height: 1.7;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(37, 99, 235, 0.07),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 100% 20%,
+      rgba(6, 182, 212, 0.05),
+      transparent 25%
+    ),
+
+    var(--background);
+
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+}
+
+
+::selection {
+  background: var(--blue);
+
+  color: var(--white);
+}
+
+
+/* ==========================================================================
+   3. HEADER / HERO
+   ========================================================================== */
+
+header {
+  position: relative;
+
+  overflow: hidden;
+
+  color: var(--white);
+
+  text-align: center;
+
+  padding:
+    5.5rem
+    1.5rem
+    4.5rem;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(37, 99, 235, 0.38),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 85% 75%,
+      rgba(6, 182, 212, 0.22),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 50% 120%,
+      rgba(124, 58, 237, 0.18),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      135deg,
+      #050a13 0%,
+      #0b1424 45%,
+      #172554 100%
+    );
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+
+/* Decorative background ring */
+
+header::before {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  top: -150px;
+  left: -90px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  border-radius: 50%;
+}
+
+
+/* Second decorative ring */
+
+header::after {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  right: -180px;
+  bottom: -240px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+
+/* Header title */
+
+header h1 {
+  position: relative;
+
+  z-index: 1;
+
+  font-family: var(--font-heading);
+
+  font-size:
+    clamp(
+      2.1rem,
+      5vw,
+      3.7rem
+    );
+
+  font-weight: 800;
+
+  letter-spacing: -0.045em;
+
+  margin-bottom: 0.8rem;
+
+  text-shadow:
+    0 5px 25px
+    rgba(0, 0, 0, 0.3);
+}
+
+
+/* Header subtitle */
+
+header p {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 720px;
+
+  margin:
+    0 auto;
+
+  color: #cbd5e1;
+
+  font-size:
+    clamp(
+      1rem,
+      2vw,
+      1.15rem
+    );
+
+  font-weight: 400;
+}
+
+
+/* ==========================================================================
+   4. NAVIGATION
+   ========================================================================== */
+
+nav {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 1000;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding:
+    0.75rem 1rem;
+
+  background:
+    rgba(8, 17, 31, 0.92);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 5px 25px
+    rgba(0, 0, 0, 0.15);
+}
+
+
+nav a {
+  position: relative;
+
+  color: #cbd5e1;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  padding:
+    0.55rem 0.9rem;
+
+  border-radius:
+    var(--radius-sm);
+
+  transition:
+    var(--transition);
+}
+
+
+nav a:hover,
+nav a:focus {
+  color: var(--white);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--blue-dark)
+    );
+
+  outline: none;
+
+  box-shadow:
+    var(--shadow-blue);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* ==========================================================================
+   5. MAIN CONTENT
+   ========================================================================== */
+
+main {
+  width: 100%;
+
+  max-width:
+    var(--max-width);
+
+  margin:
+    3.5rem auto;
+
+  padding:
+    0 1.25rem;
+}
+
+
+/* ==========================================================================
+   6. SECTION CARDS
+   ========================================================================== */
+
+/*
+   CLASS SELECTOR
+
+   This is deliberately used for repeated
+   sections throughout the website.
+*/
+
+.content-section {
+  position: relative;
+
+  background:
+    rgba(255, 255, 255, 0.96);
+
+  padding:
+    2.4rem;
+
+  margin-bottom:
+    2rem;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow-sm);
+
+  transition:
+    var(--transition);
+
+  overflow: hidden;
+}
+
+
+/*
+   Decorative gradient line
+*/
+
+.content-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--blue),
+      var(--cyan),
+      var(--purple)
+    );
+}
+
+
+.content-section:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    var(--shadow-md);
+
+  border-color:
+    #d5deeb;
+}
+
+
+/* ==========================================================================
+   7. ID SELECTOR
+   ========================================================================== */
+
+/*
+   ID SELECTOR
+
+   The assignment requires an ID selector.
+*/
+
+#hobbies {
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f7fbff
+    );
+
+  border-left:
+    5px solid
+    var(--blue);
+}
+
+
+/* ==========================================================================
+   8. TYPOGRAPHY
+   ========================================================================== */
+
+h2 {
+  color:
+    var(--primary);
+
+  font-size:
+    clamp(
+      1.45rem,
+      3vw,
+      1.85rem
+    );
+
+  font-weight:
+    750;
+
+  letter-spacing:
+    -0.025em;
+
+  margin-bottom:
+    1.3rem;
+
+  padding-bottom:
+    0.75rem;
+
+  border-bottom:
+    1px solid
+    var(--border);
+}
+
+
+h3 {
+  color:
+    var(--primary-light);
+
+  font-size:
+    1.18rem;
+
+  font-weight:
+    700;
+
+  margin:
+    1.5rem 0
+    0.75rem;
+}
+
+
+p {
+  color:
+    var(--text-soft);
+
+  margin-bottom:
+    1rem;
+}
+
+
+/* ==========================================================================
+   9. LISTS
+   ========================================================================== */
+
+ul,
+ol {
+  margin-left:
+    1.5rem;
+
+  margin-bottom:
+    1.25rem;
+
+  color:
+    var(--text-soft);
+}
+
+
+li {
+  margin-bottom:
+    0.55rem;
+
+  padding-left:
+    0.25rem;
+}
+
+
+li::marker {
+  color:
+    var(--blue);
+
+  font-weight:
+    700;
+}
+
+
+/* ==========================================================================
+   10. GENERAL CONTENT LINKS
+   ========================================================================== */
+
+main a {
+  color:
+    var(--blue);
+
+  font-weight:
+    600;
+
+  text-decoration:
+    underline;
+
+  text-decoration-thickness:
+    1px;
+
+  text-underline-offset:
+    3px;
+
+  transition:
+    var(--transition);
+}
+
+
+main a:hover {
+  color:
+    var(--blue-dark);
+
+  text-decoration-thickness:
+    2px;
+}
+
+
+/* ==========================================================================
+   11. PHOTO GALLERY
+   ========================================================================== */
+
+.gallery-grid {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        240px,
+        1fr
+      )
+    );
+
+  gap:
+    1.5rem;
+
+  margin-top:
+    1.5rem;
+}
+
+
+figure {
+  position:
+    relative;
+
+  background:
+    var(--surface);
+
+  border:
+    1px solid
+    var(--border);
+
+  padding:
+    0.65rem;
+
+  border-radius:
+    var(--radius-md);
+
+  text-align:
+    center;
+
+  box-shadow:
+    var(--shadow-sm);
+
+  overflow:
+    hidden;
+
+  transition:
+    var(--transition);
+}
+
+
+figure:hover {
+  transform:
+    translateY(-7px);
+
+  border-color:
+    var(--blue-light);
+
+  box-shadow:
+    var(--shadow-lg);
+}
+
+
+figure img {
+  display:
+    block;
+
+  width:
+    100%;
+
+  max-width:
+    100%;
+
+  height:
+    220px;
+
+  object-fit:
+    cover;
+
+  border-radius:
+    var(--radius-sm);
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+figure:hover img {
+  transform:
+    scale(1.04);
+}
+
+
+figcaption {
+  padding:
+    0.9rem
+    0.5rem
+    0.35rem;
+
+  color:
+    var(--text-soft);
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================================================
+   12. MEDIA
+   ========================================================================== */
+
+.media-card {
+  margin-bottom:
+    1.5rem;
+
+  padding:
+    1.5rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3f566f,
+      #27558e
+    );
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-md);
+
+  box-shadow:
+    var(--shadow-sm);
+
+  transition:
+    var(--transition);
+}
+
+
+.media-card:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+
+.media-card h3 {
+  margin-top:
+    0;
+
+  color:
+    var(--primary);
+}
+
+
+video {
+  display:
+    block;
+
+  width:
+    70%;
+
+  max-width:
+    50%;
+
+  height:
+    auto;
+
+  margin:
+    1rem 0;
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    #020617;
+
+  box-shadow:
+    var(--shadow-md);
+}
+
+
+audio {
+  width:
+    100%;
+
+  margin:
+    1rem 0;
+
+  border-radius:
+    var(--radius-sm);
+}
+
+
+details {
+  margin-top:
+    1rem;
+
+  padding:
+    1rem;
+
+  background:
+    var(--surface);
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-sm);
+
+  color:
+    var(--text-soft);
+
+  font-size:
+    0.9rem;
+}
+
+
+summary {
+  cursor:
+    pointer;
+
+  color:
+    var(--blue);
+
+  font-weight:
+    650;
+}
+
+
+/* ==========================================================================
+   13. DATA TABLE
+   ========================================================================== */
+
+table {
+  width:
+    100%;
+
+  margin:
+    1.5rem 0;
+
+  border-collapse:
+    separate;
+
+  border-spacing:
+    0;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-md);
+
+  box-shadow:
+    var(--shadow-sm);
+}
+
+
+caption {
+  padding-bottom:
+    0.8rem;
+
+  color:
+    var(--primary);
+
+  font-size:
+    1.05rem;
+
+  font-weight:
+    700;
+
+  text-align:
+    left;
+}
+
+
+th,
+td {
+  padding:
+    0.95rem 1rem;
+
+  text-align:
+    left;
+
+  border-bottom:
+    1px solid
+    var(--border);
+}
+
+
+th {
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--primary-light)
+    );
+
+  color:
+    var(--white);
+
+  font-size:
+    0.84rem;
+
+  font-weight:
+    700;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    0.04em;
+}
+
+
+td {
+  color:
+    var(--text-soft);
+
+  background:
+    var(--white);
+}
+
+
+tr:nth-child(even) td {
+  background:
+    var(--surface-soft);
+}
+
+
+tr:hover td {
+  background:
+    var(--accent-light);
+}
+
+
+tr:last-child td {
+  border-bottom:
+    none;
+}
+
+
+/* ==========================================================================
+   14. CONTACT FORM
+   ========================================================================== */
+
+.form-group {
+  margin-bottom:
+    1.25rem;
+}
+
+
+label {
+  display:
+    block;
+
+  margin-bottom:
+    0.45rem;
+
+  color:
+    var(--primary);
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    650;
+}
+
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width:
+    100%;
+
+  padding:
+    0.9rem 1rem;
+
+  border:
+    1px solid
+    var(--border-dark);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    var(--white);
+
+  color:
+    var(--text);
+
+  font-family:
+    inherit;
+
+  font-size:
+    0.95rem;
+
+  transition:
+    var(--transition);
+}
+
+
+textarea {
+  min-height:
+    150px;
+
+  resize:
+    vertical;
+}
+
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color:
+    #94a3b8;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline:
+    none;
+
+  border-color:
+    var(--blue);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      37,
+      99,
+      235,
+      0.12
+    );
+}
+
+
+/* ==========================================================================
+   15. SUBMIT BUTTON
+   ========================================================================== */
+
+.btn-submit {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    100%;
+
+  padding:
+    0.9rem 1.6rem;
+
+  border:
+    none;
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--blue),
+      var(--blue-dark)
+    );
+
+  color:
+    var(--white);
+
+  font-family:
+    inherit;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    var(--shadow-blue);
+
+  transition:
+    var(--transition);
+}
+
+
+.btn-submit:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 14px 30px
+    rgba(
+      37,
+      99,
+      235,
+      0.32
+    );
+}
+
+
+.btn-submit:active {
+  transform:
+    translateY(0);
+}
+
+
+.btn-submit:focus {
+  outline:
+    none;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(
+      37,
+      99,
+      235,
+      0.2
+    );
+}
+
+
+.form-note {
+  margin-top:
+    0.75rem;
+
+  color:
+    var(--text-light);
+
+  font-size:
+    0.85rem;
+
+  text-align:
+    center;
+}
+
+
+/* ==========================================================================
+   16. FOOTER
+   ========================================================================== */
+
+footer {
+  margin-top:
+    4rem;
+
+  padding:
+    2.75rem 1rem;
+
+  background:
+    linear-gradient(
+      135deg,
+      #050a13,
+      #0f1b30
+    );
+
+  color:
+    #94a3b8;
+
+  text-align:
+    center;
+
+  font-size:
+    0.9rem;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+}
+
+
+footer p {
+  color:
+    #94a3b8;
+
+  margin-bottom:
+    0.35rem;
+}
+
+
+/* ==========================================================================
+   17. RESPONSIVE DESIGN
+   ========================================================================== */
+
+
+/* -------------------- Larger Screens -------------------- */
+
+@media (min-width: 900px) {
+
+  .btn-submit {
+    width:
+      auto;
+
+    min-width:
+      180px;
+  }
+
+}
+
+
+/* -------------------- Tablets -------------------- */
+
+@media (max-width: 800px) {
+
+  header {
+    padding:
+      4rem
+      1.25rem
+      3rem;
+  }
+
+
+  main {
+    margin-top:
+      2rem;
+  }
+
+
+  .content-section {
+    padding:
+      1.8rem;
+  }
+
+}
+
+
+/* -------------------- Mobile -------------------- */
+
+@media (max-width: 600px) {
+
+  header {
+    padding:
+      3.5rem
+      1rem
+      2.75rem;
+  }
+
+
+  header h1 {
+    font-size:
+      2rem;
+  }
+
+
+  header p {
+    font-size:
+      0.95rem;
+  }
+
+
+  nav {
+    gap:
+      0.2rem;
+
+    padding:
+      0.6rem;
+  }
+
+
+  nav a {
+    font-size:
+      0.78rem;
+
+    padding:
+      0.45rem
+      0.6rem;
+  }
+
+
+  main {
+    padding:
+      0 0.85rem;
+
+    margin:
+      1.5rem auto;
+  }
+
+
+  .content-section {
+    padding:
+      1.35rem;
+
+    margin-bottom:
+      1.25rem;
+
+    border-radius:
+      var(--radius-md);
+  }
+
+
+  .gallery-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      1rem;
+  }
+
+
+  figure img {
+    height:
+      230px;
+  }
+
+
+  table {
+    display:
+      block;
+
+    overflow-x:
+      auto;
+
+    white-space:
+      nowrap;
+  }
+
+
+  th,
+  td {
+    padding:
+      0.7rem;
+  }
+
+
+  .media-card {
+    padding:
+      1rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   18. ACCESSIBILITY
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior:
+      auto;
+  }
+
+
+  *,
+  *::before,
+  *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+
+}
+
+
+/* ==========================================================================
+   END OF ICT251 STYLESHEET
+   ========================================================================== */
+
